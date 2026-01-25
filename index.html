@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tetris Web</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== LAYAR AWAL ===== -->
+<div id="startScreen" class="overlay start-screen">
+    <div class="start-box">
+        <h1 class="title">TETRIS</h1>
+        <p class="subtitle">Classic block puzzle</p>
+        <button class="play-btn" onclick="startGame()">PLAY</button>
+        <p class="hint">Gunakan Arrow Keys / WASD untuk bergerak & rotate</p>
+    </div>
+</div>
+
+<!-- ===== GAME OVER ===== -->
+<div id="gameOver" class="overlay" style="display:none">
+    <h1>GAME OVER</h1>
+    <button onclick="startGame()">PLAY AGAIN</button>
+</div>
+
+<div class="game-container">
+    <canvas id="tetris" width="240" height="400"></canvas>
+
+    <div class="panel">
+        <h3>Skor</h3>
+        <h1 id="score">0</h1>
+
+        <h3>High Score</h3>
+        <h2 id="highScore">0</h2>
+
+        <h3>Level</h3>
+        <h2 id="level">1</h2>
+
+        <div class="panel">
+            <h3>Volume BGM</h3>
+            <input type="range" id="bgmVolume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+
+        <button id="pauseBtn" onclick="pauseGame()">PAUSE</button>
+        <button onclick="exitGame()">EXIT</button>
+
+        <div class="controls">
+            <button onclick="move(-1)">←</button>
+            <button onclick="rotate()">⟳</button>
+            <button onclick="move(1)">→</button><br>
+            <button onclick="drop()">↓</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
