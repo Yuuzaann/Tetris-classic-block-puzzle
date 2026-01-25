@@ -193,7 +193,7 @@ function startGame(){
     arena.forEach(r=>r.fill(0));
     player.score=0; player.level=1; dropInterval=1000;
     gameOverState=false; isPaused=false; isRunning=true;
-    pauseBtn.innerText='JEDA';
+    pauseBtn.innerText='PAUSE';
     sounds.bgm.currentTime=0; sounds.bgm.play();
     resetPlayer(); updateScore(); lastTime=0; update();
 }
@@ -218,7 +218,7 @@ function exitGame(){
     sounds.bgm.pause(); 
     isRunning=false; 
     isPaused=false; 
-    pauseBtn.innerText='JEDA';
+    pauseBtn.innerText='PAUSE';
     document.getElementById('startScreen').style.display='flex';
 }
 
@@ -228,7 +228,7 @@ function endGame(){
     sounds.gameover.play();
     gameOverState=true; 
     isRunning=false; 
-    pauseBtn.innerText='JEDA';
+    pauseBtn.innerText='PAUSE';
     document.getElementById('gameOver').style.display='flex';
 }
 
